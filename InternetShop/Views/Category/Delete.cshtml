@@ -1,0 +1,63 @@
+﻿@model InternetShop.Models.Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden/>
+    <div class="border p-3">
+
+        <div class="row">
+            <h2 class="text-info p-lg-3">Delete Category</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div class="col-8">
+                        <input disabled class="w-100 form-control" asp-for="Name" />
+                      
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="DisplayOrder"></label>
+                    </div>
+                    <div class="col-8">
+                        <input disabled class="w-100 form-control" asp-for="DisplayOrder" />
+                       
+                    </div>
+
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+
+                        <div class="col">
+                            <input class="btn btn-danger w-100" type="submit" value="Delete" />
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-primary w-100" asp-action="Index"><i class="fa-solid fa-right-from-bracket"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts{
+    @*client validation *@
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
